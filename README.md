@@ -1,4 +1,4 @@
-# mern-auth
+# InterviewBae
 
 <!-- ![Final App](https://i.postimg.cc/tybZb8dL/final-MERNAuth.gif)
 Minimal full-stack MERN app with authentication using passport and JWTs. -->
@@ -32,6 +32,12 @@ module.exports = {
 ```javascript
 // Install dependencies for server & client
 npm install && npm run client-install
+
+// install required dependencies
+npm i bcryptjs body-parser concurrently express is-empty jsonwebtoken mongoose passport passport-jwt validator
+
+// Install dev dependency
+npm i -D nodemon
 
 // Run client & server with concurrently
 npm run dev
