@@ -1,7 +1,7 @@
 {
-  "name": "mern-auth",
+  "name": "interview-bae",
   "version": "1.0.0",
-  "description": "Mern Auth Example",
+  "description": "Interview Bae - Interview Assistant Application",
   "main": "server.js",
   "scripts": {
     "client-install": "npm install --prefix client",
