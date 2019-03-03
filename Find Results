@@ -1,0 +1,20 @@
+Searching 39252 files for "mern-auth" (case sensitive)
+
+/Users/rajjwalrawal/Desktop/mern-simple_auth/package-lock.json:
+    1  {
+    2:   "name": "mern-simple_auth",
+    3    "version": "1.0.0",
+    4    "lockfileVersion": 1,
+
+/Users/rajjwalrawal/Desktop/mern-simple_auth/package.json:
+    1  {
+    2:   "name": "mern-simple_auth",
+    3    "version": "1.0.0",
+    4    "description": "Mern Auth Example",
+
+/Users/rajjwalrawal/Desktop/mern-simple_auth/README.md:
+    1: # mern-simple_auth
+    2  
+    3  ![Final App](https://i.postimg.cc/tybZb8dL/final-MERNAuth.gif)
+
+3 matches across 3 files
