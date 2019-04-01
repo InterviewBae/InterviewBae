@@ -53,7 +53,7 @@ for link in links:
     questions[i]=question
     i+=1
 
-with open('result.json', 'w') as fp:
+with open('questions.json', 'w') as fp:
     json.dump(questions, fp)
     
 driver.close()
