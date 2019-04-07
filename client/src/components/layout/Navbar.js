@@ -14,8 +14,7 @@ class Navbar extends Component {
               }}
               className="col s5 brand-logo center black-text"
             >
-              <i className="material-icons">code</i>
-              INTERVIEW-BAE
+              <p>&lt;<img src={require('./hello.png')} alt="heart" width="40" height="40" align="center"/>&gt; INTERVIEW-BAE</p>
             </Link>
           </div>
         </nav>
