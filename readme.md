@@ -28,6 +28,10 @@ module.exports = {
 };
 ```
 
+Make sure you have React DevTools extension installed to be able to run the application from [this] link.
+
+[this]: https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en
+
 ## Quick Start
 
 ```javascript
