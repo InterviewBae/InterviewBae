@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import { getQuestion } from "../../actions/questionActions";
-import './screen-divide.css';
 import AceEditor from 'react-ace';
 
 import 'brace/mode/javascript';
@@ -54,7 +53,7 @@ class Dashboard extends Component {
             </button>
           </div>
           <div className="col s9" style={{float: "right"}}>
-                <AceEditor mode="javascript" theme="github" name="blah1" height="35em" width="60em"
+                <AceEditor mode="javascript" theme="github" name="blah1" height="35em" width="80em" setOptions={{"printMargin": 0}}
                     defaultValue={defaultValue}
                     onChange={(newValue) => console.log('Change in first editor', newValue)} />
           </div>
