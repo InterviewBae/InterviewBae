@@ -12,7 +12,7 @@ import 'brace/theme/github';
 import 'brace/theme/monokai';
 import 'brace/theme/solarized_light';
 
-var defaultValue = `console.log("Hello World");`;
+const defaultValue = `console.log("Hello World");`;
 
 class Dashboard extends Component {
   componentWillMount() {
@@ -26,6 +26,7 @@ class Dashboard extends Component {
 
   render() {
     //defaultValue = this.props.question.data.Content;
+    // const { question } = this.props.question.data;
     console.log(this.props.question.data);
     const { user } = this.props.auth;
     return (
