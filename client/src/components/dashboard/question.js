@@ -17,7 +17,7 @@ class QuestionBar extends Component {
     render()
     {
         return(
-        <div style={{ width: "100vw" }}>
+        <div style={{ width: "100vw", padding: "4em" }}>
         {question}
         </div>);
     }
