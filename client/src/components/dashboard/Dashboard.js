@@ -3,11 +3,16 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import './screen-divide.css';
+import AceEditor from 'react-ace';
 
-// import Editor from 'react-simple-code-editor';
-// import { highlight, languages } from 'prismjs/components/prism-core';
-// import 'prismjs/components/prism-clike';
-// import 'prismjs/components/prism-javascript';
+import 'brace/mode/javascript';
+
+// load used themes
+import 'brace/theme/github';
+import 'brace/theme/monokai';
+import 'brace/theme/solarized_light';
+
+const defaultValue = `console.log('hello world');`;
 
 class Dashboard extends Component {
   onLogoutClick = e => {
@@ -19,9 +24,9 @@ class Dashboard extends Component {
     const { user } = this.props.auth;
 
     return (
-      <div style={{ height: "75vh" }} className="container valign-wrapper">
-        <div className="container">
-          <div className="left-half">
+      <div style={{ height: "75vh", width: "100vw" }} className="container valign-wrapper">
+        <div className="row">
+          <div className="col s2" style={{float: "left"}}>
             <h4>
               <b>Hey there,</b> {user.name.split(" ")[0]}
               <p className="flow-text grey-text text-darken-1">
@@ -42,8 +47,10 @@ class Dashboard extends Component {
               Logout
             </button>
           </div>
-          <div className="right-half">
-            
+          <div className="col s9" style={{float: "right"}}>
+                <AceEditor mode="javascript" theme="github" name="blah1" height="35em" width="60em"
+                    defaultValue={defaultValue}
+                    onChange={(newValue) => console.log('Change in first editor', newValue)} />
           </div>
         </div>
       </div>
