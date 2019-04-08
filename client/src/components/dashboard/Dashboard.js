@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
+import { getQuestion } from "../../actions/questionActions";
 import AceEditor from 'react-ace';
 
 import 'brace/mode/javascript';
@@ -11,22 +12,28 @@ import 'brace/theme/github';
 import 'brace/theme/monokai';
 import 'brace/theme/solarized_light';
 
-const defaultValue = `console.log('hello world');`;
+var defaultValue = `console.log("Hello World");`;
 
 class Dashboard extends Component {
+  componentWillMount() {
+    this.props.getQuestion();
+  }
+
   onLogoutClick = e => {
     e.preventDefault();
     this.props.logoutUser();
   };
 
   render() {
+    //defaultValue = this.props.question.data.Content;
+    console.log(this.props.question.data);
     const { user } = this.props.auth;
     return (
       <div style={{ height: "75vh", width: "100vw" }} className="container valign-wrapper">
-        <div className="row">
+       <div className="row">
           <div className="col s2" style={{float: "left"}}>
             <h4>
-              <b>Hey there,</b> {user.name.split(" ")[0]}
+              <b>Hey there, </b> {user.name.split(" ")[0]}
               <p className="flow-text grey-text text-darken-1">
                 You are logged into {" "}
                 <span style={{ fontFamily: "monospace" }}><b>Interview-Bae</b></span>: your personal interview assistant. 👏
@@ -58,14 +65,16 @@ class Dashboard extends Component {
 
 Dashboard.propTypes = {
   logoutUser: PropTypes.func.isRequired,
-  auth: PropTypes.object.isRequired
+  auth: PropTypes.object.isRequired,
+  question: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-  auth: state.auth
+  auth: state.auth,
+  question: state.currentQuestion
 });
 
 export default connect(
   mapStateToProps,
-  { logoutUser }
+  { logoutUser, getQuestion }
 )(Dashboard);
