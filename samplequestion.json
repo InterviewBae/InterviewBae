@@ -1,0 +1,49 @@
+{
+  "questions" : {
+    "1" : {
+      "example" : "Given nums = [2, 7, 11, 15] and target = 9, return [0, 1] because nums[0] + nums[1] = 2 + 7 = 9.",
+      "hint" : "Try using Hash table.",
+      "question" : "Given an array of integers, return indices of the two numbers such that they add up to a specific target.You may assume that each input would have exactly one solution, and you may not use the same element twice."
+    },
+    "2" : {
+      "example" : "For Input 'A man, a plan, a canal: Panama' Output must be true",
+      "hint" : "You should use Two Pointer approach.",
+      "question" : "Given a string, determine if it is a palindrome, considering only alphanumeric characters and ignoring cases."
+    },
+    "3" : {
+      "example" : "For input ['h','e','l','l','o'], output is ['o','l','l','e','h']",
+      "hint" : "Modify the input array in-place.",
+      "question" : "Write a function that reverses a string. The input string is given as an array of characters. Do not allocate extra space for another array."
+    },
+    "4" : {
+      "example" : "For Input nums1 = [1,2,2,1], nums2 = [2,2] Output is [2]",
+      "hint" : "Try using Set.",
+      "question" : "Given two arrays, write a function to compute their intersection."
+    },
+    "5" : {
+      "example" : "For Input 'HEllo' with capital H and E, Output must be 'hello' with all lowercase characters.",
+      "hint" : "Modify ASCII values.",
+      "question" : "Implement function ToLowerCase() that has a string parameter str, and returns the same string in lowercase."
+    },
+    "6" : {
+      "example" : "For input 123, return 321.",
+      "hint" : "Pop and Push. Don't forget overflow.",
+      "question" : "Given a 32-bit signed integer, reverse digits of an integer."
+    },
+    "7" : {
+      "example" : "For Input 6, Output is true because 6 is 2 times 3. For Input 14, Output is false because it includes another prime factor 7.",
+      "hint" : "Try dividing by 2, 3 and 5.",
+      "question" : "Write a program to check whether a given number is an ugly number. Ugly numbers are positive numbers whose prime factors only include 2, 3, 5."
+    },
+    "8" : {
+      "example" : "For input [0,1,0,3,12], output must be [1,3,12,0,0].",
+      "hint" : "Modify the input array in-place.",
+      "question" : "Given an array nums, write a function to move all 0's to the end of it while maintaining the relative order of the non-zero elements."
+    },
+    "9" : {
+      "example" : "For Input [2,2,1] Output must be 1.",
+      "hint" : "Try using Bit Manipulation.",
+      "question" : "Given a non-empty array of integers, every element appears twice except for one. Find that single one."
+    }
+  }
+}

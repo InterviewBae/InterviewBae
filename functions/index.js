@@ -31,13 +31,44 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
  function InterviewQuestion(agent) {
   return admin.database().ref('questions').once('value').then((snapshot) => {
       if (snapshot.exists) {
-          var question = snapshot.child('question').val();
+          var rando = (Math.floor(Math.random() * Math.floor(9)))+1;
+          var question = snapshot.child(rando).child('question').val();
+          admin.database().ref('current').set(snapshot.child(rando).val());
           agent.add(`The Question is `+question);
       }
       return null;
    });   
  }
 
+ // Hint Intent
+ function InterviewHint(agent) {
+    return admin.database().ref('current').once('value').then((snapshot) => {
+        if (snapshot.exists) {
+            var hint = snapshot.child('hint').val();
+            agent.add(hint);
+        }
+        else{
+            agent.add(`Hint is not available.`);
+        }
+        return  null;
+     });   
+   }
+
+ // Example Intent
+ function InterviewExample(agent) {
+    return admin.database().ref('current').once('value').then((snapshot) => {
+        if (snapshot.exists) {
+            var example = snapshot.child('example').val();
+            agent.add(example);
+        }
+        else{
+            agent.add(`Example is not available.`);
+        }
+        return  null;
+     });   
+   }
+
+   
  // // Uncomment and edit to make your own intent handler
  // // uncomment `intentMap.set('your intent name here', yourFunctionHandler);`
  // // below to get this function to be run when a Dialogflow intent is matched
@@ -74,5 +105,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
  // intentMap.set('your intent name here', yourFunctionHandler);
  // intentMap.set('your intent name here', googleAssistantHandler);
  intentMap.set('Interview Question', InterviewQuestion);
+ intentMap.set('Interview Hint', InterviewHint); 
+ intentMap.set('Interview Example', InterviewExample); 
  agent.handleRequest(intentMap);
 });
