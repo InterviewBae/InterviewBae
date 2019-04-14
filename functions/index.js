@@ -31,7 +31,8 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
  function InterviewQuestion(agent) {
   return admin.database().ref('questions').once('value').then((snapshot) => {
       if (snapshot.exists) {
-          var question = snapshot.child('question').val();
+          var rando = (Math.floor(Math.random() * Math.floor(9)))+1;
+          var question = snapshot.child(rando).child('question').val();
           agent.add(`The Question is `+question);
       }
       return null;
