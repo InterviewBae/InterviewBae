@@ -40,6 +40,21 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
    });   
  }
 
+ // Hint Intent
+ function InterviewHint(agent) {
+    return admin.database().ref('current').once('value').then((snapshot) => {
+        if (snapshot.exists) {
+            var hint = snapshot.child('hint').val();
+            agent.add(hint);
+        }
+        else
+            {
+                agent.add(`Hint is not available.`);
+            }
+        return null;
+     });   
+   }
+
  // // Uncomment and edit to make your own intent handler
  // // uncomment `intentMap.set('your intent name here', yourFunctionHandler);`
  // // below to get this function to be run when a Dialogflow intent is matched
@@ -76,5 +91,6 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
  // intentMap.set('your intent name here', yourFunctionHandler);
  // intentMap.set('your intent name here', googleAssistantHandler);
  intentMap.set('Interview Question', InterviewQuestion);
+ intentMap.set('Interview Hint', InterviewHint); 
  agent.handleRequest(intentMap);
 });
