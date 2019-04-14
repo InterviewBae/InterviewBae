@@ -59,7 +59,7 @@ class Dashboard extends Component {
           </div>
           <div className="col s9" style={{float: "right"}}>
                 <QuestionBar/>
-                <AceEditor mode="python" theme="github" name="blah1" height="35em" width="80em" setOptions={{"printMargin": 0}}
+                <AceEditor mode="python" theme="github" name="blah1" height="35em" width="78em" setOptions={{"printMargin": 0}}
                                     defaultValue={defaultValue}
                                     onChange={(newValue) => console.log('Change in first editor', newValue)} />
           </div>
