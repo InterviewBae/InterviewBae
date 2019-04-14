@@ -27,6 +27,16 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
    agent.add(`I'm sorry, can you try again?`);
  }
 
+ // Test Function
+ function InterviewQuestion(agent) {
+  return admin.database().ref('questions').once('value').then((snapshot) => {
+      if (snapshot.exists) {
+          var question = snapshot.child('question').val();
+          agent.add(`The Question is `+question);
+      }
+      return null;
+   });   
+ }
 
  // // Uncomment and edit to make your own intent handler
  // // uncomment `intentMap.set('your intent name here', yourFunctionHandler);`
@@ -63,5 +73,6 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
  intentMap.set('Default Fallback Intent', fallback);
  // intentMap.set('your intent name here', yourFunctionHandler);
  // intentMap.set('your intent name here', googleAssistantHandler);
+ intentMap.set('Interview Question', InterviewQuestion);
  agent.handleRequest(intentMap);
 });
