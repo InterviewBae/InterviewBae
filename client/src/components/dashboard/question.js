@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getQuestion } from "../../actions/questionActions";
 
+import './box.css';
+
 var question = "";
 
 class QuestionBar extends Component {
@@ -16,10 +18,12 @@ class QuestionBar extends Component {
 
     render()
     {
+        console.log(question);
         return(
-        <div style={{ width: "100vw", padding: "4em" }}>
-        {question}
-        </div>);
+            <div>
+                <blockquote>{question}</blockquote>
+            </div>
+        );
     }
 }
 

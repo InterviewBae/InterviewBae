@@ -4,19 +4,31 @@ import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import { getQuestion } from "../../actions/questionActions";
 import AceEditor from 'react-ace';
+import QuestionBar from "./question";
 
 import 'brace/mode/javascript';
+import 'brace/mode/python';
 
 // load used themes
 import 'brace/theme/github';
 import 'brace/theme/monokai';
 import 'brace/theme/solarized_light';
 
+
+var question = null;
 const defaultValue = `console.log("Hello World");`;
 
 class Dashboard extends Component {
   componentWillMount() {
-    this.props.getQuestion();
+    if (question === null){
+      this.props.getQuestion();
+    }
+  }
+
+  componentDidUpdate(){
+    if (question === null){
+      question = this.props.question.data.Content;
+    }
   }
 
   onLogoutClick = e => {
@@ -26,20 +38,12 @@ class Dashboard extends Component {
 
   render() {
     //defaultValue = this.props.question.data.Content;
-    // const { question } = this.props.question.data;
-    console.log(this.props.question.data);
     const { user } = this.props.auth;
+    // console.log(this.state.defaultValue);
     return (
       <div style={{ height: "75vh", width: "100vw" }} className="container valign-wrapper">
        <div className="row">
           <div className="col s2" style={{float: "left"}}>
-            <h4>
-              <b>Hey there, </b> {user.name.split(" ")[0]}
-              <p className="flow-text grey-text text-darken-1">
-                You are logged into {" "}
-                <span style={{ fontFamily: "monospace" }}><b>Interview-Bae</b></span>: your personal interview assistant. 👏
-              </p>
-            </h4>
             <button
               style={{
                 width: "150px",
@@ -54,9 +58,10 @@ class Dashboard extends Component {
             </button>
           </div>
           <div className="col s9" style={{float: "right"}}>
-                <AceEditor mode="javascript" theme="github" name="blah1" height="35em" width="80em" setOptions={{"printMargin": 0}}
-                    defaultValue={defaultValue}
-                    onChange={(newValue) => console.log('Change in first editor', newValue)} />
+                <QuestionBar/>
+                <AceEditor mode="python" theme="github" name="blah1" height="35em" width="80em" setOptions={{"printMargin": 0}}
+                                    defaultValue={defaultValue}
+                                    onChange={(newValue) => console.log('Change in first editor', newValue)} />
           </div>
         </div>
       </div>
