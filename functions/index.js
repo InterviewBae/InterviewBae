@@ -33,6 +33,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
       if (snapshot.exists) {
           var rando = (Math.floor(Math.random() * Math.floor(9)))+1;
           var question = snapshot.child(rando).child('question').val();
+          admin.database().ref('current').set(snapshot.child(rando).val());
           agent.add(`The Question is `+question);
       }
       return null;
