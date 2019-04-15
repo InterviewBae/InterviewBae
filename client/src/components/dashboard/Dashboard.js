@@ -54,7 +54,7 @@ class Dashboard extends Component {
       <MenuAppBar userName={user.name} logout={this.onLogoutClick}/>
       <div style={{ width: "100%" }}>
        <div className="row">
-          <div className="col s1" style={{float: "left", margin:"true"}}>
+          <div className="col s1" style={{float: "left"}}>
             <div className="chat">
               <div className="assistantbox"> CHATBOT </div>
               <div className="yours messages">
