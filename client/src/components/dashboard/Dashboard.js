@@ -5,6 +5,7 @@ import { logoutUser } from "../../actions/authActions";
 import { getQuestion } from "../../actions/questionActions";
 import AceEditor from 'react-ace';
 import QuestionBar from "./question";
+import MenuAppBar from './NavBar';
 
 import 'brace/mode/javascript';
 import 'brace/mode/python';
@@ -13,6 +14,8 @@ import 'brace/mode/python';
 import 'brace/theme/github';
 import 'brace/theme/monokai';
 import 'brace/theme/solarized_light';
+
+import './assistant.css';
 
 
 var question = null;
@@ -41,29 +44,35 @@ class Dashboard extends Component {
     const { user } = this.props.auth;
     // console.log(this.state.defaultValue);
     return (
-      <div style={{ height: "75vh", width: "100vw" }} className="container valign-wrapper">
+      <div style={{paddingTop:"5vh", width:"100%"}}>
+      <MenuAppBar userName={user.name} logout={this.onLogoutClick}/>
+      <div style={{ width: "100%" }} className="container valign-wrapper">
        <div className="row">
           <div className="col s2" style={{float: "left"}}>
-            <button
-              style={{
-                width: "150px",
-                borderRadius: "3px",
-                letterSpacing: "1.5px",
-                marginTop: "1rem"
-              }}
-              onClick={this.onLogoutClick}
-              className="btn btn-large waves-effect waves-light hoverable blue accent-3"
-              >
-              Logout
-            </button>
+            <div class="chat">
+              CHATBOT
+              <div class="yours messages">
+                <div class="message last">
+                  Hello, how's it going?
+                </div>
+              </div>
+              <div class="mine messages">
+                <div class="message">
+                  Great thanks!
+                </div> 
+                <div class="message last">
+                  How about you?
+                 </div>
+              </div>
+            </div>
           </div>
           <div className="col s9" style={{float: "right"}}>
-                <QuestionBar/>
-                <AceEditor mode="python" theme="github" name="blah1" height="35em" width="78em" setOptions={{"printMargin": 0}}
-                                    defaultValue={defaultValue}
-                                    onChange={(newValue) => console.log('Change in first editor', newValue)} />
+            <QuestionBar/>
+              <AceEditor mode="python" theme="github" name="blah1" height="35em" width="78em" setOptions={{"printMargin": 0}}
+                defaultValue={defaultValue} onChange={(newValue) => console.log('Change in first editor', newValue)} />
           </div>
         </div>
+      </div>
       </div>
     );
   }
