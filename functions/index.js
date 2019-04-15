@@ -19,7 +19,7 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
  console.log('Dialogflow Request body: ' + JSON.stringify(request.body));
 
  function welcome(agent) {
-   agent.add(`Welcome to my agent!`);
+   agent.add(`Welcome to Interview Bae! I'm a virtual assistant to help you prepare for Interviews!`);
  }
 
  function fallback(agent) {
