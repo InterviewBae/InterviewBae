@@ -84,6 +84,19 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
      });   
    }
 
+    // Example Intent
+ function RepeatQuestion(agent) {
+    return admin.database().ref('current').once('value').then((snapshot) => {
+        if (snapshot.exists) {
+            var example = snapshot.child('question').val();
+            agent.add(example);
+        }
+        else{
+            agent.add(`Question is not available.`);
+        }
+        return  null;
+     });   
+   }
    
  // // Uncomment and edit to make your own intent handler
  // // uncomment `intentMap.set('your intent name here', yourFunctionHandler);`
@@ -125,5 +138,6 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
  intentMap.set('Interview Question', InterviewQuestion);
  intentMap.set('Interview Hint', InterviewHint); 
  intentMap.set('Interview Example', InterviewExample); 
+ intentMap.set('Repeat Question', RepeatQuestion); 
  agent.handleRequest(intentMap);
 });
