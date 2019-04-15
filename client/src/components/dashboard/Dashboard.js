@@ -6,6 +6,7 @@ import { getQuestion } from "../../actions/questionActions";
 import AceEditor from 'react-ace';
 import QuestionBar from "./question";
 import MenuAppBar from './NavBar';
+import ChatBot from './ChatBot';
 
 import 'brace/mode/javascript';
 import 'brace/mode/python';
@@ -55,24 +56,7 @@ class Dashboard extends Component {
       <div style={{ width: "100%" }}>
        <div className="row">
           <div className="col s1" style={{float: "left"}}>
-            <div className="chat">
-              <div className="assistantbox"> CHATBOT </div>
-              <div className="yours messages">
-                <div className="message">
-                 Welcome to Interview Bae.
-                </div>
-              </div>
-              <div className="mine messages">
-                <div className="message">
-                  Can I get an interview question?
-                </div> 
-              </div>
-              <div className="yours messages">
-                <div className="message">
-                 Sure. Here is a question for you
-                </div>
-              </div>
-            </div>
+            <ChatBot/>
           </div>
           <div className="col s8" style={{float: "right"}}>
             <QuestionBar/>
