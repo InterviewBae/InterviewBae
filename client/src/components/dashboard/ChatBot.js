@@ -29,9 +29,9 @@ class ChatBot extends Component{
 			     What is 5 times 10?
 			    </div>
 			  </div>
-			  <div className="yours messages">
+			  <div className="mine messages">
 			    <div className="message">
-			     Did you say you need a hint?
+			     Can I get a hint?
 			    </div>
 			  </div>
 			</div>
