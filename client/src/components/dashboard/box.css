@@ -1,16 +1,18 @@
 blockquote {
   min-height: 5em;
   padding   : 1em 4em;
-  font      : 1em/150% sans-serif;
+  font      : 1em/150% Georgia, "Courier New", Courier, monospace;
+  color: black;
+  font-style: italic;
   position  : relative;
-  background-color: coral;
+  background-color: #F5F5F5;
 }
 
 blockquote::before,
 blockquote::after {
   position: absolute;
   height  : 3rem;
-  font    : 6rem/100% Georgia, "Times New Roman", Times, serif;
+  font    : 6rem/100% Georgia, "Courier New", Times, monospace;
 }
 
 blockquote::before {

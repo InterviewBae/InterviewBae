@@ -20,7 +20,7 @@ class QuestionBar extends Component {
     {
         console.log(question);
         return(
-            <div style={{width: "56vw" }} className="container">
+            <div style={{width: "56vw", float:"right", padding: "0px"}}>
                 <blockquote>{question}</blockquote>
             </div>
         );

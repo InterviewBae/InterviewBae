@@ -1,3 +1,12 @@
+.assistantbox {
+  text-align: center;
+  font      : 1em/150% Georgia, "Courier New", Courier, monospace;
+  color: black;
+  font-style: italic;
+  position  : relative;
+  background-color: #F5F5F5;
+}
+
 .body {
   font-family: helvetica;
   display: flex ;
@@ -69,6 +78,7 @@
   margin-left: 25%;
   background: rgb(0, 120, 254);
   position: relative;
+  text-align: right;
 }
 
 .mine .message.last:before {
