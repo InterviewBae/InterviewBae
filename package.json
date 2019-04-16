@@ -26,6 +26,7 @@
     "passport-jwt": "^4.0.0",
     "react-ace": "^6.4.0",
     "react-dom": "^16.8.6",
+    "react-iframe": "^1.8.0",
     "selenium": "^2.20.0",
     "validator": "^10.11.0"
   },

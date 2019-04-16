@@ -7,6 +7,7 @@ import AceEditor from 'react-ace';
 import QuestionBar from "./question";
 import MenuAppBar from './NavBar';
 import ChatBot from './ChatBot';
+import Button from '@material-ui/core/Button';
 
 import 'brace/mode/javascript';
 import 'brace/mode/python';
@@ -26,7 +27,7 @@ import './assistant.css';
 
 
 var question = null;
-const defaultValue = `console.log("Hello World");`;
+const defaultValue = ``;
 
 class Dashboard extends Component {
   componentWillMount() {
@@ -60,8 +61,9 @@ class Dashboard extends Component {
           </div>
           <div className="col s8" style={{float: "right"}}>
             <QuestionBar/>
-              <AceEditor mode="python" theme="chrome" name="blah1" height="35em" width="78.5em" style={{float:"right", padding: "0px"}} setOptions={{"printMargin": 0}}
+              <AceEditor mode="python" theme="chrome" name="blah1" height="44em" width="105em" style={{float:"right", padding: "0px"}} setOptions={{"printMargin": 0}}
                 defaultValue={defaultValue} onChange={(newValue) => console.log('Change in first editor', newValue)} />
+              <Button variant="contained" style={{float: "right"}}> Grab Snapshot </Button>
           </div>
         </div>
       </div>

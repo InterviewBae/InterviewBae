@@ -1,0 +1,25 @@
+<div className="mine messages">
+			    <div className="message">
+			      Talk to interview bae.
+			    </div> 
+			  </div>
+			  <div className="yours messages">
+			    <div className="message">
+			     Welcome to Interview Bae! I'm a virtual assistant to help you prepare for Interviews! Do you want to learn more before getting started?
+			    </div>
+			  </div>
+			  <div className="mine messages">
+			    <div className="message">
+			      Yes
+			    </div> 
+			  </div>
+			  <div className="yours messages">
+			    <div className="message">
+			     You can ask me to give you an interview question. I can even give you an example and a hint for the question if you need it!
+			    </div>
+			  </div>
+			  <div className="mine messages">
+			    <div className="message">
+			      Can I get an interview question?
+			    </div> 
+			  </div>
