@@ -19,8 +19,24 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
  console.log('Dialogflow Request body: ' + JSON.stringify(request.body));
 
  function welcome(agent) {
-   agent.add(`Welcome to my agent!`);
+   agent.add(`Welcome to Interview Bae! I'm a virtual assistant to help you prepare for Interviews! Do you want to learn more before getting started?`);
  }
+
+ function welcomeYes(agent) {
+    agent.add(`You can ask me to give you an interview question. I can even give you an example and a hint for the question if you need it!`);
+  }
+
+  function welcomeNo(agent) {
+    return admin.database().ref('questions').once('value').then((snapshot) => {
+        if (snapshot.exists) {
+            var rando = (Math.floor(Math.random() * Math.floor(9)))+1;
+            var question = snapshot.child(rando).child('question').val();
+            admin.database().ref('current').set(snapshot.child(rando).val());
+            agent.add(`Sure. That means you already know a lot about me. Awesome! Let's start with Interview Question then! The Question is `+question);
+        }
+        return null;
+     }); 
+  }
 
  function fallback(agent) {
    agent.add(`I didn't understand`);
@@ -68,6 +84,19 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
      });   
    }
 
+    // Example Intent
+ function RepeatQuestion(agent) {
+    return admin.database().ref('current').once('value').then((snapshot) => {
+        if (snapshot.exists) {
+            var example = snapshot.child('question').val();
+            agent.add(example);
+        }
+        else{
+            agent.add(`Question is not available.`);
+        }
+        return  null;
+     });   
+   }
    
  // // Uncomment and edit to make your own intent handler
  // // uncomment `intentMap.set('your intent name here', yourFunctionHandler);`
@@ -101,11 +130,14 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
  // Run the proper function handler based on the matched Dialogflow intent name
  let intentMap = new Map();
  intentMap.set('Default Welcome Intent', welcome);
+ intentMap.set('Default Welcome Intent - no', welcomeNo);
+ intentMap.set('Default Welcome Intent - yes', welcomeYes); 
  intentMap.set('Default Fallback Intent', fallback);
  // intentMap.set('your intent name here', yourFunctionHandler);
  // intentMap.set('your intent name here', googleAssistantHandler);
  intentMap.set('Interview Question', InterviewQuestion);
  intentMap.set('Interview Hint', InterviewHint); 
  intentMap.set('Interview Example', InterviewExample); 
+ intentMap.set('Repeat Question', RepeatQuestion); 
  agent.handleRequest(intentMap);
 });
