@@ -40,7 +40,9 @@ class Login extends Component {
 
   onSubmit = e => {
     e.preventDefault();
-
+    if (this.state.email === "teacher@test.com"){
+      return;
+    }
     const userData = {
       email: this.state.email,
       password: this.state.password

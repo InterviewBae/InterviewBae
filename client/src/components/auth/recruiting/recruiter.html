@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 20%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.container {
+  padding: 0 16px;
+}
+
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color: grey;
+}
+
+.w3-theme-l5 {color:#000 !important; background-color:#f5f5f5 !important}
+.w3-theme-l4 {color:#000 !important; background-color:#f5f5f5 !important}
+.w3-theme-l3 {color:#000 !important; background-color:#f5f5f5 !important}
+.w3-theme-l2 {color:#000 !important; background-color:#f5f5f5 !important}
+.w3-theme-l1 {color:#000 !important; background-color:#f5f5f5 !important}
+.w3-theme-d1 {color:#fff !important; background-color:#f5f5f5 !important}
+.w3-theme-d2 {color:#fff !important; background-color:#f5f5f5 !important}
+.w3-theme-d3 {color:#fff !important; background-color:#f5f5f5 !important}
+.w3-theme-d4 {color:#fff !important; background-color:#f5f5f5 !important}
+.w3-theme-d5 {color:#fff !important; background-color:#f5f5f5 !important}
+
+.w3-theme-light {color:#f5f5f5 !important; background-color:#fff !important}
+.w3-theme-dark {color:#f5f5f5 !important; background-color:#fff !important}
+.w3-theme-action {color:#fff !important; background-color:#fff !important}
+
+.w3-theme {color:#fff !important; background-color:#fff !important}
+.w3-text-theme {color:#9e9e9e !important}
+.w3-border-theme {border-color:#9e9e9e !important}
+
+.w3-hover-theme:hover {color:#fff !important; background-color:#fff !important}
+.w3-hover-text-theme:hover {color:#9e9e9e !important}
+.w3-hover-border-theme:hover {border-color:#9e9e9e !important}
+    
+
+</style>
+</head>
+<body>
+<p align="center">
+  <img src="./hello.png" width="395px" height="105px" align="center">
+</p>
+<div class="w3-row w3-padding w3-theme-d2 w3-xlarge">
+  <div class="w3-quarter">
+    <div class="w3-bar">
+      <a href="#" class="w3-bar-item w3-button"><i class="fa fa-bars" style="color: black;"></i></a>
+    </div>
+  </div>
+
+  <div class="w3-half">
+    <input type="text" class="w3-grey w3-border-0 w3-padding" style="width:100%">
+  </div>
+
+  <div class="w3-quarter">
+    <div class="w3-bar w3-xlarge">
+      <a href="#" class="w3-bar-item w3-button w3-left"><i class="fa fa-search" style="color: black;"></i></a>
+      <a href="#" class="w3-bar-item w3-button w3-right"><img class="w3-hide-small w3-circle" src="0.png" style="height:40px;"></a>
+    </div>
+
+  </div>
+</div>
+
+<br>
+<br>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <h2>Aarya BC</h2>
+        <p class="title">Computer Science</p>
+        <div class="progress" style="width: 300px;">
+          <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
+          aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+            Easy
+          </div>
+        </div>
+        <div class="progress" style="width: 300px;">
+          <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar"
+          aria-valuenow="49" aria-valuemin="0" aria-valuemax="100" style="width:49%">
+            Medium
+          </div>
+        </div>
+        <div class="progress" style="width: 300px;">
+          <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar"
+          aria-valuenow="57" aria-valuemin="0" aria-valuemax="100" style="width:57%">
+            Hard
+          </div>
+        </div>
+        <p style="padding-left:15em"><button>Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <h2>Swapnil Tamrakar</h2>
+        <p class="title">Computer Science</p>
+        <div class="progress" style="width: 300px;">
+          <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
+          aria-valuenow="40" aria-valuemin="0" aria-valuemax="90" style="width:90%">
+            Easy
+          </div>
+        </div>
+        <div class="progress" style="width: 300px;">
+          <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar"
+          aria-valuenow="40" aria-valuemin="0" aria-valuemax="30" style="width:30%">
+            Medium
+          </div>
+        </div>
+        <div class="progress" style="width: 300px;">
+          <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar"
+          aria-valuenow="70" aria-valuemin="0" aria-valuemax="70" style="width:70%">
+            Hard
+          </div>
+        </div>
+        <p style="padding-left:15em"><button>Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <h2>Sumit Dhungel</h2>
+        <p class="title">Computer Science</p>
+        <div class="progress" style="width: 300px;">
+          <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
+          aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+            Easy
+          </div>
+        </div>
+        <div class="progress" style="width: 300px;">
+          <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar"
+          aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+            Medium
+          </div>
+        </div>
+        <div class="progress" style="width: 300px;">
+          <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar"
+          aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">
+            Hard
+          </div>
+        </div>
+        <p style="padding-left:15em"><button>Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <h2>Rajjwal Rawal</h2>
+        <p class="title">Computer Science</p>
+        <div class="progress" style="width: 300px;">
+          <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
+          aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%">
+            Easy
+          </div>
+        </div>
+        <div class="progress" style="width: 300px;">
+          <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar"
+          aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width:90%">
+            Medium
+          </div>
+        </div>
+        <div class="progress" style="width: 300px;">
+          <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar"
+          aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width:80%">
+            Hard
+          </div>
+        </div>
+        <p style="padding-left:15em"><button>Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <h2>Pratyush Thapa</h2>
+        <p class="title">Computer Science</p>
+        <div class="progress" style="width: 300px;">
+          <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
+          aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+            Easy
+          </div>
+        </div>
+        <div class="progress" style="width: 300px;">
+          <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar"
+          aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width:60%">
+            Medium
+          </div>
+        </div>
+        <div class="progress" style="width: 300px;">
+          <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar"
+          aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" style="width:30%">
+            Hard
+          </div>
+        </div>
+        <p style="padding-left:15em"><button>Contact</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <h2>Test Account1</h2>
+        <p class="title">Computer Science</p>
+        <div class="progress" style="width: 300px;">
+          <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
+          aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width:10%">
+            Easy
+          </div>
+        </div>
+        <div class="progress" style="width: 300px;">
+          <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar"
+          aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%;">
+            Medium
+          </div>
+        </div>
+        <div class="progress" style="width: 300px;">
+          <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar"
+          aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">
+            Hard
+          </div>
+        </div>
+        <p style="padding-left:15em"><button>Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <div class="container">
+        <h2>TestAcc011</h2>
+        <p class="title">Computer Science</p>
+        <div class="progress" style="width: 300px;">
+          <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar"
+          aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+            Easy
+          </div>
+        </div>
+        <div class="progress" style="width: 300px;">
+          <div class="progress-bar progress-bar-warning progress-bar-striped active" role="progressbar"
+          aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width:40%">
+            Medium
+          </div>
+        </div>
+        <div class="progress" style="width: 300px;">
+          <div class="progress-bar progress-bar-danger progress-bar-striped active" role="progressbar"
+          aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+            Hard
+          </div>
+        </div>
+        <p style="padding-left:15em"><button>Contact</button></p>
+      </div>
+    </div>
+  </div>
+
+  
+</div>
+</body>
+</html>
